@@ -2,7 +2,7 @@
 
 Under development, not for production.
 
-Quantum simulation of symbolic linguistics.
+Quantum simulation of symbolic linguistics and machine learning of the creative process.
 
 A brief description of the theory:
 
