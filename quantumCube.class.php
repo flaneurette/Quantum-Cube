@@ -4,7 +4,7 @@
 
 ###########################################################################
 ##                                                                       ##
-##  Quantum simulation of symbolic linguistics.           	             ##
+##  Quantum simulation of symbolic linguistics.           	         ##
 ##                                                                       ##
 ##  Copyright 2019 Alexandra van den Heetkamp.                           ##
 ##                                                                       ##
@@ -45,6 +45,7 @@ class quantumCube {
 	'female',
 	'creative',
 	'destructive',
+	'passive',
 	'chaos',
 	'random',
 	'dreams',
@@ -67,6 +68,7 @@ class quantumCube {
 	'male',
 	'seeding',
 	'order',
+	'active',
 	'selective',
 	'selecting',
 	'select',
