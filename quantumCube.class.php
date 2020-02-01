@@ -41,8 +41,7 @@ class quantumCube {
 	public $literal_var = "";
 	public $literalseed = "";
 	
-	// A symbolic can create a literal, when it is limited and adequately spaced out.
-	
+	// The symbolic can create a literal, when it is limited and adequately spaced out.
 	public $symbolic_test_matrice = [
 	'female',
 	'creative',
@@ -66,6 +65,7 @@ class quantumCube {
 	'form'
 	];
 	
+	// The literal can create a symbolic, when it is expanded and receptive.
 	public $literal_test_matrice  = [
 	'male',
 	'seeding',
