@@ -40,12 +40,6 @@ class quantumCube {
 	public $output_var  = "";
 	public $literal_var = "";
 	public $literalseed = "";
-	
-	/* 
-	The symbolic can create and understand a literal, when it is limited and adequately spaced out. The symbolic can be both 
-	literal and symbolic in a quantum state simultaneously. However, the literal is only able to take and process literal input 
-	serially, despite being the source of the symbology. i.e. projecting symbology from a literal postion, superseeding it.
-	*/
 		
 	public $symbolic_test_matrice = [
 	'female',
@@ -69,11 +63,6 @@ class quantumCube {
 	'shape',
 	'form'
 	];
-	
-	/* 
-	The literal can create a symbolic, when it is expanded and receptive. i.e. reseeding the symbolic from a receptive state, 
-	instead of superseeding and projection of symbolics into literals, contineously. 
-	*/
 	
 	public $literal_test_matrice  = [
 	'male',
