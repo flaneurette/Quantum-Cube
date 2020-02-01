@@ -36,8 +36,8 @@ class quantumCube {
 	public $model_3   = [];
 	
 	// variables
-	public $input_var 	= "";
-	public $output_var 	= "";
+	public $input_var   = "";
+	public $output_var  = "";
 	public $literal_var = "";
 	public $literalseed = "";
 	
