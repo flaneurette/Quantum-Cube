@@ -41,6 +41,52 @@ class quantumCube {
 	public $literal_var = "";
 	public $literalseed = "";
 	
+	public $symbolic_test_matrice = [
+	'female',
+	'creative',
+	'destructive',
+	'chaos',
+	'random',
+	'dreams',
+	'medium',
+	'organic',
+	'dark',
+	'trust',
+	'analogue',
+	'polyphonic',
+	'blur',
+	'blurring',
+	'open',
+	'mother',
+	'motherly',
+	'shape',
+	'form'
+	];
+	
+	public $literal_test_matrice  = [
+	'male',
+	'seeding',
+	'order',
+	'selective',
+	'selecting',
+	'select',
+	'clock',
+	'time',
+	'solution',
+	'machine',
+	'light',
+	'fear',
+	'rational',
+	'control',
+	'serial',
+	'clear',
+	'closed',
+	'father',
+	'fatherly',
+	'chain',
+	'link'
+	];
+	
 	public function __construct($params = array()) 
 	{ 
 		$this->init($params);
