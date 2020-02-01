@@ -70,7 +70,11 @@ class quantumCube {
 	'form'
 	];
 	
-	// The literal can create a symbolic, when it is expanded and receptive.
+	/* 
+	The literal can create a symbolic, when it is expanded and receptive. i.e. reseeding the symbolic from a receptive state, 
+	instead of superseeding and projection of symbolics into literals, contineously. 
+	*/
+	
 	public $literal_test_matrice  = [
 	'male',
 	'seeding',
