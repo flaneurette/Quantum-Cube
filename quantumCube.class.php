@@ -34,10 +34,14 @@ class quantumCube {
 	public $matrice_3 = [];
 	public $matrice_4 = [];
 
-	// model containers that seeds a matrice with a literal.
+	/* Model containers that seeds a matrice with a literal.
+	 * these 3 models, in turn, combine to create and octogon.
+	*/
+	
 	public $model_1   = [];
 	public $model_2   = [];
 	public $model_3   = [];
+	
 	public $model_count = 3;
 	
 	// variables
