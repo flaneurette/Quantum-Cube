@@ -294,10 +294,10 @@ class quantumCube {
 				$cuboid_model[$i] = [
 					
 					1 => $matrice_1[$this->literals[0]], // face 1
-					2 => $matrice_1[$this->literals[1]], // face 1
-					3 => $matrice_1[$this->literals[2]], // face 1
-					4 => $matrice_1[$this->literals[3]], // face 1
-					// Fill the other two faces with all symbolics.
+					2 => $matrice_1[$this->literals[1]], // face 2
+					3 => $matrice_1[$this->literals[2]], // face 3
+					4 => $matrice_1[$this->literals[3]], // face 4
+					// Fill the other two faces with all the symbolics.
 					5 => $matrice_1[$this->symbolics], // face 5
 					6 => $matrice_1[$this->symbolics] // face 6
 				];
