@@ -269,7 +269,7 @@ class quantumCube {
 	}
 	
 	public function simple_random_number() {
-		return mt_rand(0,1);
+		return random_int(0,1);
 	}
 	
 	/**
