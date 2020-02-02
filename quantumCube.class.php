@@ -34,12 +34,104 @@ class quantumCube {
 	public $model_1   = [];
 	public $model_2   = [];
 	public $model_3   = [];
+	public $model_count = 3;
 	
 	// variables
 	public $input_var   = "";
 	public $output_var  = "";
 	public $literal_var = "";
 	public $literalseed = "";
+
+	/**
+	* Models
+	* Each model has it's own matrice.
+	*/	
+	
+	public $literals = [
+	
+		[1,1,1,1,1,1,1,1,
+		1,1,1,1,1,1,1,1,
+		1,1,1,1,1,1,1,1,
+		1,1,1,1,1,1,1,1,
+		1,1,1,1,1,1,1,1,
+		1,1,1,1,1,1,1,1,
+		1,1,1,1,1,1,1,1,
+		1,1,1,1,1,1,1,1
+		],
+		
+		[1,1,1,1,1,1,1,1,
+		1,1,1,1,1,1,1,1,
+		1,1,1,1,1,1,1,1,
+		1,1,1,1,1,1,1,1,
+		1,1,1,1,1,1,1,1,
+		1,1,1,1,1,1,1,1,
+		1,1,1,1,1,1,1,1,
+		1,1,1,1,1,1,1,1
+		],
+		
+		[1,1,1,1,1,1,1,1,
+		1,1,1,1,1,1,1,1,
+		1,1,1,1,1,1,1,1,
+		1,1,1,1,1,1,1,1,
+		1,1,1,1,1,1,1,1,
+		1,1,1,1,1,1,1,1,
+		1,1,1,1,1,1,1,1,
+		1,1,1,1,1,1,1,1
+		],
+		
+		[1,1,1,1,1,1,1,1,
+		1,1,1,1,1,1,1,1,
+		1,1,1,1,1,1,1,1,
+		1,1,1,1,1,1,1,1,
+		1,1,1,1,1,1,1,1,
+		1,1,1,1,1,1,1,1,
+		1,1,1,1,1,1,1,1,
+		1,1,1,1,1,1,1,1
+		]		
+	];
+	
+	public $symbolics = [
+		[0,0,0,0,0,0,0,0,
+		0,0,0,0,0,0,0,0,
+		0,0,0,0,0,0,0,0,
+		0,0,0,0,0,0,0,0,
+		0,0,0,0,0,0,0,0,
+		0,0,0,0,0,0,0,0,
+		0,0,0,0,0,0,0,0,
+		0,0,0,0,0,0,0,0
+		],
+		
+		[0,0,0,0,0,0,0,0,
+		0,0,0,0,0,0,0,0,
+		0,0,0,0,0,0,0,0,
+		0,0,0,0,0,0,0,0,
+		0,0,0,0,0,0,0,0,
+		0,0,0,0,0,0,0,0,
+		0,0,0,0,0,0,0,0,
+		0,0,0,0,0,0,0,0
+		],
+		
+		[0,0,0,0,0,0,0,0,
+		0,0,0,0,0,0,0,0,
+		0,0,0,0,0,0,0,0,
+		0,0,0,0,0,0,0,0,
+		0,0,0,0,0,0,0,0,
+		0,0,0,0,0,0,0,0,
+		0,0,0,0,0,0,0,0,
+		0,0,0,0,0,0,0,0
+		],
+		
+		[0,0,0,0,0,0,0,0,
+		0,0,0,0,0,0,0,0,
+		0,0,0,0,0,0,0,0,
+		0,0,0,0,0,0,0,0,
+		0,0,0,0,0,0,0,0,
+		0,0,0,0,0,0,0,0,
+		0,0,0,0,0,0,0,0,
+		0,0,0,0,0,0,0,0
+		]
+	];	
+	
 		
 	public $symbolic_test_matrice = [
 	'female',
@@ -140,7 +232,7 @@ class quantumCube {
 	
 	public function quantum_cube($input_var){
 		
-		$needle = $this->$input_var;
+		$needle = $this->input_var;
 		$init 	= $this->cube_faces();
 	}
 	
@@ -169,15 +261,33 @@ class quantumCube {
 		$model_1 = $this->model_1;
 		$model_2 = $this->model_2;
 		$model_3 = $this->model_3;
+		$rounds	 = $this->model_count;
 
+		for($i = 0; $i <= $rounds; $i++) {
 	
-		foreach($model_points as $point) {	
-			$cuboid_model = [
-				1 => array_search($matrice_1[$point],$this->$literal_needle),
-				2 => array_search($matrice_2[$point],$this->$literal_needle),
-				3 => array_search($matrice_3[$point],$this->$literal_needle),
-				4 => array_search($matrice_4[$point],$this->$literal_needle)
-			];
+			foreach($model_points as $point) {	
+			
+				$cuboid_model = [
+					1 => array_search($matrice_1[$point],$this->literal_needle),
+					2 => array_search($matrice_2[$point],$this->literal_needle),
+					3 => array_search($matrice_3[$point],$this->literal_needle),
+					4 => array_search($matrice_4[$point],$this->literal_needle)
+				];
+				
+				/* TODO: Search process will be placed here. 
+				*  after search, we should seed the models 
+				*  with literals and shift them through the two 
+				*  empty faces of the cube.
+				*/
+				
+				$cuboid_model = [
+					1 => $matrice_1[$this->literals[$i]], // face 1
+					2 => $matrice_2[$this->literals[$i]], // face 2
+					3 => $matrice_3[$this->literals[$i]], // face 3
+					4 => $matrice_4[$this->literals[$i]]  // face 4
+				];
+				
+			}
 		}
 	}
 	
