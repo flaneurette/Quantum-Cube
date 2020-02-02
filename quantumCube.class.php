@@ -81,10 +81,32 @@ class quantumCube {
 		1,1,1,1,1,1,1,1,
 		1,1,1,1,1,1,1,1,
 		1,1,1,1,1,1,1,1
+		],
+		
+		[
+		1,1,1,1,1,1,1,1,
+		1,1,1,1,1,1,1,1,
+		1,1,1,1,1,1,1,1,
+		1,1,1,1,1,1,1,1,
+		1,1,1,1,1,1,1,1,
+		1,1,1,1,1,1,1,1,
+		1,1,1,1,1,1,1,1,
+		1,1,1,1,1,1,1,1
 		]		
 	];
 	
 	public $symbolics = [
+		
+		[
+		0,0,0,0,0,0,0,0,
+		0,0,0,0,0,0,0,0,
+		0,0,0,0,0,0,0,0,
+		0,0,0,0,0,0,0,0,
+		0,0,0,0,0,0,0,0,
+		0,0,0,0,0,0,0,0,
+		0,0,0,0,0,0,0,0,
+		0,0,0,0,0,0,0,0
+		],
 		
 		[
 		0,0,0,0,0,0,0,0,
@@ -255,7 +277,7 @@ class quantumCube {
 	
 			foreach($model_points as $point) {	
 			
-				$cuboid_model = [
+				$cuboid_model[0] = [
 					1 => array_search($matrice_1[$point],$this->literal_needle),
 					2 => array_search($matrice_2[$point],$this->literal_needle),
 					3 => array_search($matrice_3[$point],$this->literal_needle),
@@ -268,11 +290,16 @@ class quantumCube {
 				*  empty faces of the cube.
 				*/
 				
-				$cuboid_model = [
-					1 => $matrice_1[$this->literals[$i]], // face 1
-					2 => $matrice_2[$this->literals[$i]], // face 2
-					3 => $matrice_3[$this->literals[$i]], // face 3
-					4 => $matrice_4[$this->literals[$i]]  // face 4
+				// face #
+				$cuboid_model[$i] = [
+					
+					1 => $matrice_1[$this->literals[0]], // face 1
+					2 => $matrice_1[$this->literals[1]], // face 1
+					3 => $matrice_1[$this->literals[2]], // face 1
+					4 => $matrice_1[$this->literals[3]], // face 1
+					// Fill the other two faces with all symbolics.
+					5 => $matrice_1[$this->symbolics], // face 5
+					6 => $matrice_1[$this->symbolics] // face 6
 				];
 				
 			}
