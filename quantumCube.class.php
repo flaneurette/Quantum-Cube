@@ -291,8 +291,7 @@ class quantumCube {
 				*/
 				
 				// M1
-				$cuboid_model[] = [
-					
+				$cuboid_model = [
 					1 => $matrice_1[$this->literals[0]], // face 1
 					2 => $matrice_1[$this->literals[1]], // face 2
 					3 => $matrice_1[$this->literals[2]], // face 3
@@ -303,39 +302,33 @@ class quantumCube {
 				];
 				
 				// M2
-				$cuboid_model[] = [
-					
-					1 => $matrice_2[$this->literals[0]], // face 1
-					2 => $matrice_2[$this->literals[1]], // face 2
-					3 => $matrice_2[$this->literals[2]], // face 3
-					4 => $matrice_2[$this->literals[3]], // face 4
-					// Fill the other two faces with all the symbolics.
-					5 => $matrice_2[$this->symbolics], // face 5
-					6 => $matrice_2[$this->symbolics] // face 6
+				$cuboid_model .= [
+					1 => $matrice_2[$this->literals[0]],
+					2 => $matrice_2[$this->literals[1]], 
+					3 => $matrice_2[$this->literals[2]], 
+					4 => $matrice_2[$this->literals[3]], 
+					5 => $matrice_2[$this->symbolics], 
+					6 => $matrice_2[$this->symbolics] 
 				];
 				
 				// M3
-				$cuboid_model[] = [
-					
-					1 => $matrice_3[$this->literals[0]], // face 1
-					2 => $matrice_3[$this->literals[1]], // face 2
-					3 => $matrice_3[$this->literals[2]], // face 3
-					4 => $matrice_3[$this->literals[3]], // face 4
-					// Fill the other two faces with all the symbolics.
-					5 => $matrice_3[$this->symbolics], // face 5
-					6 => $matrice_3[$this->symbolics] // face 6
+				$cuboid_model .= [
+					1 => $matrice_3[$this->literals[0]], 
+					2 => $matrice_3[$this->literals[1]], 
+					3 => $matrice_3[$this->literals[2]], 
+					4 => $matrice_3[$this->literals[3]], 
+					5 => $matrice_3[$this->symbolics], 
+					6 => $matrice_3[$this->symbolics]
 				];
 				
 				// M4
-				$cuboid_model[] = [
-					
-					1 => $matrice_4[$this->literals[0]], // face 1
-					2 => $matrice_4[$this->literals[1]], // face 2
-					3 => $matrice_4[$this->literals[2]], // face 3
-					4 => $matrice_4[$this->literals[3]], // face 4
-					// Fill the other two faces with all the symbolics.
-					5 => $matrice_4[$this->symbolics], // face 5
-					6 => $matrice_4[$this->symbolics] // face 6
+				$cuboid_model .= [
+					1 => $matrice_4[$this->literals[0]], 
+					2 => $matrice_4[$this->literals[1]], 
+					3 => $matrice_4[$this->literals[2]], 
+					4 => $matrice_4[$this->literals[3]], 
+					5 => $matrice_4[$this->symbolics], 
+					6 => $matrice_4[$this->symbolics]
 				];				
 			}
 		}
