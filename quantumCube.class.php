@@ -23,6 +23,10 @@
 
 class quantumCube {
 	
+	const MINHASHBYTES = 32; 	 // Min. of bytes for secure hash.
+	const MAXHASHBYTES = 64; 	 // Max. of bytes for secure hash, more increases cost. Max. recommended: 256 bytes.
+	const MINMERSENNE  = 0xff; 	 // Min. value of the Mersenne twister.
+	const MAXMERSENNE  = 0xffffffff; // Max. value of the Mersenne twister.
 	
 	// matrice containers
 	public $matrice_1 = [];
@@ -233,6 +237,40 @@ class quantumCube {
 	{
 		return $string;
 	}	
+
+	
+	/**
+	* creates a random seed.
+	* @param string
+	* @return string
+	*/
+	
+	public function random_seed(){
+		
+		$bytes = 0;
+		
+		if (function_exists('random_bytes')) {
+			$len   = mt_rand(self::MINHASHBYTES,self::MAXHASHBYTES);
+        		$bytes .= bin2hex(random_bytes($len));
+    		}
+		if (function_exists('openssl_random_pseudo_bytes')) {
+			$len   = mt_rand(self::MINHASHBYTES,self::MAXHASHBYTES);
+        		$bytes .= bin2hex(openssl_random_pseudo_bytes($len));
+    		}
+		
+		if(strlen($bytes) < 128) {
+			$bytes .= mt_rand(self::MINMERSENNE,self::MAXMERSENNE) . mt_rand(self::MINMERSENNE,self::MAXMERSENNE) . mt_rand(self::MINMERSENNE,self::MAXMERSENNE)
+				. mt_rand(self::MINMERSENNE,self::MAXMERSENNE) . mt_rand(self::MINMERSENNE,self::MAXMERSENNE) . mt_rand(self::MINMERSENNE,self::MAXMERSENNE) 
+				. mt_rand(self::MINMERSENNE,self::MAXMERSENNE) . mt_rand(self::MINMERSENNE,self::MAXMERSENNE) . mt_rand(self::MINMERSENNE,self::MAXMERSENNE) 
+				. mt_rand(self::MINMERSENNE,self::MAXMERSENNE) . mt_rand(self::MINMERSENNE,self::MAXMERSENNE) . mt_rand(self::MINMERSENNE,self::MAXMERSENNE); 
+		}	
+	
+		return $bytes;
+	}
+	
+	public function simple_random_number() {
+		return mt_rand(0,1);
+	}
 	
 	/**
 	* creates quantum cube with four faces, each containing a single matrice.
