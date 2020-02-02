@@ -34,9 +34,7 @@ class quantumCube {
 	public $matrice_3 = [];
 	public $matrice_4 = [];
 
-	/* Model containers that seeds a matrice with a literal.
-	 * these 3 models, in turn, combine to create and octogon.
-	*/
+	/* Model containers that seeds a matrice with a literal. */
 	
 	public $model_1   = [];
 	public $model_2   = [];
@@ -310,9 +308,11 @@ class quantumCube {
 		$matrice_3 = $this->matrice_3;
 		$matrice_4 = $this->matrice_4;
 		 
+		// These 3 models also combine to create an octagon.
 		$model_1 = $this->model_1;
 		$model_2 = $this->model_2;
 		$model_3 = $this->model_3;
+		
 		$rounds	 = $this->model_count;
 
 		for($i = 0; $i <= $rounds; $i++) {
